@@ -4,6 +4,14 @@
 
 ## [Unreleased]
 
+
+## [0.24.10]
+
+### Added
+
+- Fixed: compatible with IntelliJ IDEA 2025.2
+- Added: all directives support now
+
 ## [0.24.9]
 
 ### Added
