@@ -15,6 +15,7 @@ abstract class JBangBaseDirectiveCompletionContributor(language: Language) : Com
     companion object {
         val JAVA_DIRECTIVES = mapOf(
             "JAVA" to "Java version to use",
+            "MAIN" to "Set main class",
             "DEPS" to "Add dependency",
             "GAV" to "Set Group, Artifact and Version",
             "MANIFEST" to "Write entries to META-INF/manifest.mf",
