@@ -26,7 +26,7 @@ abstract class JBangBaseDirectiveCompletionContributor(language: Language) : Com
             "RUNTIME_OPTIONS" to "Options passed to runtime",
             "NATIVE_OPTIONS" to "Options passed to native-image",
             "JAVAAGENT" to "Activate agent packaging",
-            "CDS" to "Activate Class Data Sharing"
+            "CDS" to "Activate Class Data Sharing",
             "DESCRIPTION" to "Extract description from your script"
         )
     }
