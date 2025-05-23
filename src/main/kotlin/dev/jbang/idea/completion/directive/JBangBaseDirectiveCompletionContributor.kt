@@ -22,7 +22,6 @@ abstract class JBangBaseDirectiveCompletionContributor(language: Language) : Com
             "SOURCES" to "Pattern to include as sources",
             "DESCRIPTION" to "Markdown description for the application/script",
             "REPOS" to "Which repositories to use",
-            "PREVIEW" to "Activate Java preview features",
             "JAVAC_OPTIONS" to "Options passed to javac",
             "JAVA_OPTIONS" to "Options passed to java",
             "NATIVE_OPTIONS" to "Options passed to native-image",
