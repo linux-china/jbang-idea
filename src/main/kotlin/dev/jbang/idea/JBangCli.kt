@@ -9,13 +9,8 @@ import dev.jbang.idea.JBangCli.parentEnvironment
 import org.zeroturnaround.exec.ProcessExecutor
 import java.io.File
 
-private var PARENT_ENV_VAR: Map<String, String>? = null
-
-fun getParentEnvVariables(): Map<String, String> {
-    if (PARENT_ENV_VAR == null) {
-        PARENT_ENV_VAR = parentEnvironment()
-    }
-    return PARENT_ENV_VAR!!
+val PARENT_ENV_VAR: Map<String, String> by lazy {
+    parentEnvironment()
 }
 
 object JBangCli {

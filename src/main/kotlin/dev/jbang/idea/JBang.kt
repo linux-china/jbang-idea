@@ -25,7 +25,7 @@ val ALL_DIRECTIVES = listOf("JAVA", "DEPS", "GAV", "MAIN","FILES", "SOURCES", "D
 val ALL_EXT_NAMES = listOf(".java", ".kt", ".jsh", ".groovy")
 
 fun findCommandInPath(command: String): Path? {
-    val path = getParentEnvVariables()["PATH"] ?: return null
+    val path = PARENT_ENV_VAR["PATH"] ?: return null
     val pathElements = path.split(File.pathSeparator)
 //todo: on windows look for jbang.cmd
     for (pathElement in pathElements) {
@@ -45,7 +45,7 @@ fun getJBangCmdAbsolutionPath(): String {
     }
 
     val userHome = System.getProperty("user.home")
-    val jbangHome = getParentEnvVariables()["JBANG_HOME"]
+    val jbangHome = PARENT_ENV_VAR["JBANG_HOME"]
     val jbangScript = if (SystemInfo.isWindows) "jbang.cmd" else "jbang"
     var actualJBangScript: Path?
 
