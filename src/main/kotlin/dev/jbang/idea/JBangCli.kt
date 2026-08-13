@@ -4,14 +4,13 @@ import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import com.intellij.execution.configurations.GeneralCommandLine
+import com.intellij.execution.process.*
 import com.intellij.openapi.diagnostic.Logger
 import dev.jbang.idea.JBangCli.parentEnvironment
 import org.zeroturnaround.exec.ProcessExecutor
 import java.io.File
 
-val PARENT_ENV_VAR: Map<String, String> by lazy {
-    parentEnvironment()
-}
+public val PARENT_ENV_VAR by lazy { parentEnvironment() }
 
 object JBangCli {
 
@@ -77,7 +76,7 @@ object JBangCli {
     }
 
     fun parentEnvironment(): Map<String, String> {
-        return GeneralCommandLine().withParentEnvironmentType(GeneralCommandLine.ParentEnvironmentType.CONSOLE).effectiveEnvironment
+       return GeneralCommandLine().withParentEnvironmentType(GeneralCommandLine.ParentEnvironmentType.CONSOLE).effectiveEnvironment
     }
 
 }
