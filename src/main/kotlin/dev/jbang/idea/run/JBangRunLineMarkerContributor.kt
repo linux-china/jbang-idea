@@ -12,14 +12,14 @@ class JBangRunLineMarkerContributor : RunLineMarkerContributor() {
             var info: Info? = null
             val comment = element.text
             if (comment.startsWith(JBANG_DECLARE)) {
-                info = Info(jbangIcon, { "Run by JBang" }, JBangRunScriptAction(element))
+                info = Info(jbangIcon, arrayOf(JBangRunScriptAction(element)), { "Run by JBang" })
             } else {
                 if (comment.startsWith("//JAVA ")
                     || comment.startsWith("//GROOVY ")
                     || comment.startsWith("//KOTLIN ")
                 ) {
                     if (!element.parent.text.startsWith(JBANG_DECLARE)) {
-                        info = Info(jbangIcon, { "Run by JBang" }, JBangRunScriptAction(element))
+                        info = Info(jbangIcon, arrayOf(JBangRunScriptAction(element)), { "Run by JBang" })
                     }
                 } else if (comment.startsWith("//DEPS ")) {
                     val scriptText = element.parent.text
@@ -31,7 +31,7 @@ class JBangRunLineMarkerContributor : RunLineMarkerContributor() {
                         if (!javaDirectiveAvailable) {
                             val firstDeps = lines.first { it.startsWith("//DEPS ") }
                             if (comment.trim() == firstDeps) {
-                                info = Info(jbangIcon, { "Run by JBang" }, JBangRunScriptAction(element))
+                                info = Info(jbangIcon, arrayOf(JBangRunScriptAction(element)), { "Run by JBang" })
                             }
                         }
                     }
