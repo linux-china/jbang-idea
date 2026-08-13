@@ -17,10 +17,8 @@ class JBangSettingsComponent {
 
     init {
         jbangExecutablePathField.addBrowseFolderListener(
-            "Select JBang Executable",
-            "Select the JBang executable file",
             null,
-            FileChooserDescriptorFactory.createSingleFileDescriptor()
+            FileChooserDescriptorFactory.singleFile()
         )
 
         // Add a listener to update the effective path when the custom path changes
