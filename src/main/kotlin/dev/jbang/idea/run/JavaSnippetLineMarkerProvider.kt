@@ -8,7 +8,6 @@ import com.intellij.execution.configurations.PtyCommandLine
 import com.intellij.execution.executors.DefaultRunExecutor
 import com.intellij.execution.lineMarker.RunLineMarkerProvider
 import com.intellij.execution.runners.ExecutionEnvironmentBuilder
-import com.intellij.ide.IdeBundle
 import com.intellij.ide.actions.runAnything.commands.RunAnythingCommandCustomizer
 import com.intellij.ide.actions.runAnything.execution.RunAnythingRunProfile
 import com.intellij.openapi.actionSystem.DataContext
@@ -138,7 +137,7 @@ class JavaSnippetLineMarkerProvider : RunLineMarkerProvider() {
                 .dataContext(commandDataContext)
                 .buildAndExecute()
         } catch (e: ExecutionException) {
-            Messages.showInfoMessage(project, e.message, IdeBundle.message("run.anything.console.error.title"))
+            Messages.showInfoMessage(project, e.message, "Cannot Run Command")
         }
     }
 }
